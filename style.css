@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/*
+main goals
+1. responsive & fluid typography
+2. become more comfortable w/ css grid
+*/
+
 :root {
     /*color scheme,
     light to dark*/
@@ -26,6 +32,7 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-color:#bfc5d6;
 
 }
 
@@ -33,3 +40,144 @@ li {
     list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+    color:#000;
+}
+
+img {
+    max-width:100%;
+}
+
+
+
+.article-page {
+    position: absolute;
+    background-color:#fff;
+    border-radius: 5px;
+
+    min-width:20rem;
+    width:80vw;
+    max-width:80rem;
+
+
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.articles {
+    display:flex;
+}
+
+
+/*first navbar*/
+.navbar-1__items-section {
+    display:flex;
+}
+
+.navbar-1 {
+    display:flex;
+    justify-content: space-between;
+}
+
+.navbar-1__items {
+    display:flex;
+}
+
+.navbar-1__item {
+    margin:0 0.6rem;
+}
+
+.navbar-1__item:first-of-type {
+    margin-left:0;
+}
+
+
+.item-dropdown {
+    height:0;
+    visibility: hidden;
+}
+
+.item-dropdown__heading {
+    position: relative;
+    display:flex;
+    align-items:center;
+}
+
+.item-dropdown__heading h4 {
+    margin-right:0.25rem;
+    font-weight:400;
+}
+
+.item-dropdown__heading .fa-chevron-down {
+    position: relative;
+    font-size:0.75rem;
+    top:-1px;
+}
+
+
+
+
+
+/*second navbar*/
+.navbar-2 {
+    display:flex;
+    justify-content: space-between;
+}
+
+.navbar-2__items-1 {
+    display:flex;
+}
+
+.navbar-2__item {
+    margin:0 0.6rem;
+}
+
+.navbar-2__item:first-of-type {
+    margin-left:0;
+}
+
+
+
+
+
+/*current article*/
+.current-article__img {
+    width:20rem;
+}
+
+.current-article__text {
+    width:48ch;
+}
+
+
+/*recent article*/
+.recent-article-section__img {
+    width:125px;
+    height:125px;
+    object-fit:cover;
+    object-position:center center;
+}
+
+
+.recent-article-section {
+    display:flex;
+}
+
+
+.user-profile {
+    display:flex;
+    align-items:center;
+    /* justify-content: center; */
+}
+
+.user-profile__img {
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position:center center;
+}
