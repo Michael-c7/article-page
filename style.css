@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /*
 main goals
@@ -9,8 +9,12 @@ main goals
 :root {
     /*color scheme,
     light to dark*/
+
+
+    /*layout*/
+    --general-page-margin:1rem;
     
-    }
+}
 
 
 /*default styles*/
@@ -52,11 +56,13 @@ img {
 
 
 .article-page {
+    /* display:grid;
+    grid-template-rows: 5rem 1fr 5rem; */
     position: absolute;
     background-color:#fff;
     border-radius: 5px;
 
-    min-width:20rem;
+    min-width:40rem;
     width:80vw;
     max-width:80rem;
 
@@ -67,9 +73,25 @@ img {
 }
 
 
+.article-page__header {
+    /* background:red; */
+    position: relative;
+    margin:1.25rem var(--general-page-margin) 0 var(--general-page-margin);
+}
 
-.articles {
-    display:flex;
+
+.article-page__header::after {
+    content:"";
+    position: absolute;
+    background:#eee;
+    width:calc(100% + (var(--general-page-margin) * 2));
+    height:1px;
+    top:60%;
+    transform:translateY(-60%);
+    /*move left minus the --general-page-margin
+    EG: if the general page margin is 1rem than left will be -1rem*/
+    left:calc(var(--general-page-margin) - (var(--general-page-margin) * 2));
+
 }
 
 
@@ -79,9 +101,12 @@ img {
 }
 
 .navbar-1 {
+    position: relative;
     display:flex;
     justify-content: space-between;
+    align-items:center;
 }
+
 
 .navbar-1__items {
     display:flex;
@@ -94,7 +119,6 @@ img {
 .navbar-1__item:first-of-type {
     margin-left:0;
 }
-
 
 .item-dropdown {
     height:0;
@@ -126,6 +150,8 @@ img {
 .navbar-2 {
     display:flex;
     justify-content: space-between;
+
+    margin:2rem 0 3rem 0;
 }
 
 .navbar-2__items-1 {
@@ -140,13 +166,48 @@ img {
     margin-left:0;
 }
 
+/*btn styles*/
+.btn-1 {
+    background:none;
+    border:1px solid gray;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size:0.75rem;
+    letter-spacing: 0.25px;
+    padding:0.5rem 0.85rem;
+}
+
+.log-in-btn {
+    color:#000;
+    background:#fff;
+
+    margin-right:0.5rem;
+}
+
+.get-started-btn {
+    color:#fff;
+    background:#000;
+    border:none;
+}
 
 
+.articles {
+    display:flex;
+
+    background:blue;
+    margin:0 var(--general-page-margin);
+}
 
 
 /*current article*/
+.current-article__heading {
+    font-size:2.25rem;
+}
+
+
 .current-article__img {
     width:20rem;
+    border-radius: 5px;
 }
 
 .current-article__text {
@@ -163,8 +224,15 @@ img {
 }
 
 
+/* .recent-article-section-container {
+    display:grid;
+} */
+
 .recent-article-section {
     display:flex;
+
+    /* background:red;
+    margin:1rem 0; */
 }
 
 
@@ -175,8 +243,8 @@ img {
 }
 
 .user-profile__img {
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
     border-radius: 50%;
     object-fit:cover;
     object-position:center center;
